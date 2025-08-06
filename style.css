@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ACEAFF;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Clouds */
+
+.clouds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    /* z-index: 1; */
+}
+
+.cloud {
+	width: 175px; 
+    height: 60px;
+    background: #f2f9fe;
+  
+    background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+    background: linear-gradient(#f2f9fe 5%, #d6f0fd 100%);
+    
+
+    border-radius: 100px;
+    position: relative;
+    margin: 180px auto 100px;
+}
+
+.cloud:after, 
+.cloud:before {
+    content: "";
+    position: absolute;
+    background: #f2f9fe;
+    z-index: -1;
+}
+
+.cloud:after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 25px;
+    border-radius: 100px;
+}
+
+.cloud:before {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 25px;
+    border-radius: 200px;
+}
+
+/* Animation for the Airship */
+
+.airshipAnimation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.airship {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    animation: fly 10s linear infinite;
+    left: 50%;
+    transform: translateX(-50%);
+    /* left: -110px;  */
+}
+/*
+@keyframes fly {
+    from {
+        left: -150px;
+    } to {
+        left: 100%;
+    }
+}
+*/
