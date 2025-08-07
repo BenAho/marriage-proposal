@@ -23,33 +23,32 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.8;
+    overflow: hidden;
     /* z-index: 1; */
 }
 
-.cloud {
+.clouds__cloud {
 	width: 175px; 
     height: 60px;
     background: #f2f9fe;
-  
-    background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    background: linear-gradient(#f2f9fe 5%, #d6f0fd 100%);
-    
+
+    background: linear-gradient(#f2f9fe 5%, #d6f0fd 75%);
+    background: linear-gradient(#f2f9fe 75%, #d6f0fd 100%);
 
     border-radius: 100px;
-    position: relative;
-    margin: 180px auto 100px;
+    position: absolute;
+
 }
 
-.cloud:after, 
-.cloud:before {
+.clouds__cloud:after, 
+.clouds__cloud:before {
     content: "";
     position: absolute;
     background: #f2f9fe;
     z-index: -1;
 }
 
-.cloud:after {
+.clouds__cloud:after {
     width: 50px;
     height: 50px;
     top: -25px;
@@ -57,7 +56,7 @@ body {
     border-radius: 100px;
 }
 
-.cloud:before {
+.clouds__cloud:before {
     width: 90px;
     height: 90px;
     top: -45px;
@@ -65,7 +64,94 @@ body {
     border-radius: 200px;
 }
 
-/* Animation for the Airship */
+.clouds__cloud--cloudOne {
+    top: 20px;
+    left: 50px;
+    transform: scale(0.8);
+    animation: cloudAnimation 14s linear infinite;
+}
+
+.clouds__cloud--cloudTwo {
+    top: 200px;
+    left: 20px;
+    transform: scale(0.6);
+    animation: cloudAnimation 11s linear infinite;
+    z-index: -5;
+}
+
+.clouds__cloud--cloudThree {
+    top: 300px;
+    left: 15px;
+    transform: scale(0.7);
+    animation: cloudAnimation 16s linear infinite;
+}
+
+.clouds__cloud--cloudFour {
+    top: 220px;
+    left: 10px;
+    transform: scale(0.8);
+    animation: cloudAnimation 17s linear infinite;
+    z-index: -5;
+}
+
+.clouds__cloud--cloudFive {
+    top: 50px;
+    left: -300px;
+    transform: scale(0.8);
+    animation: cloudAnimation 13s linear infinite;
+}
+
+.clouds__cloud--cloudSix {
+    top: 400px;
+    left: -130px;
+    transform: scale(0.74);
+    animation: cloudAnimation 13s linear infinite;
+}
+
+.clouds__cloud--cloudSeven {
+    top: 550px;
+    left: -170px;
+    transform: scale(0.6);
+    animation: cloudAnimation 5s linear infinite;
+}
+
+.clouds__cloud--cloudEight {
+    top: 650px;
+    left: -80px;
+    transform: scale(0.65);
+    animation: cloudAnimation 8s linear infinite;
+}
+
+.clouds__cloud--cloudNine {
+    top: 690px;
+    left: -280px;
+    transform: scale(0.72);
+    animation: cloudAnimation 4s linear infinite;
+}
+
+.clouds__cloud--cloudTen {
+    top: 115px;
+    left: -280px;
+    transform: scale(0.72);
+    animation: cloudAnimation 7s linear infinite;
+}
+
+.clouds__cloud--cloudEleven {
+    top: 95px;
+    left: -200px;
+    transform: scale(0.8);
+    animation: cloudAnimation 9s linear infinite;
+}
+
+@keyframes cloudAnimation {
+    from {
+        left: -250px;
+    } to {
+        left: 100%;
+    }
+}
+
+/* Airship */
 
 .airshipAnimation {
     position: relative;
@@ -78,19 +164,18 @@ body {
 
 .airship {
     position: absolute;
-    width: 200px;
+    width: 500px;
     height: auto;
-    animation: fly 10s linear infinite;
+    animation: fly 15s linear infinite;
     left: 50%;
     transform: translateX(-50%);
     /* left: -110px;  */
 }
-/*
+
 @keyframes fly {
     from {
-        left: -150px;
+        left: -250px;
     } to {
-        left: 100%;
+        left: 120%;
     }
-}
-*/
+} 
